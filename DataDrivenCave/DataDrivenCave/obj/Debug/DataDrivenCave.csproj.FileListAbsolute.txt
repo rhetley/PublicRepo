@@ -1,0 +1,7 @@
+C:\Users\Richard S. Hetley\Documents\College Work\Cloned\igme206\TextAdventureDataDriven\DataDrivenCave\DataDrivenCave\bin\Debug\DataDrivenCave.exe.config
+C:\Users\Richard S. Hetley\Documents\College Work\Cloned\igme206\TextAdventureDataDriven\DataDrivenCave\DataDrivenCave\bin\Debug\DataDrivenCave.exe
+C:\Users\Richard S. Hetley\Documents\College Work\Cloned\igme206\TextAdventureDataDriven\DataDrivenCave\DataDrivenCave\bin\Debug\DataDrivenCave.pdb
+C:\Users\Richard S. Hetley\Documents\College Work\Cloned\igme206\TextAdventureDataDriven\DataDrivenCave\DataDrivenCave\obj\Debug\DataDrivenCave.csprojAssemblyReference.cache
+C:\Users\Richard S. Hetley\Documents\College Work\Cloned\igme206\TextAdventureDataDriven\DataDrivenCave\DataDrivenCave\obj\Debug\DataDrivenCave.csproj.CoreCompileInputs.cache
+C:\Users\Richard S. Hetley\Documents\College Work\Cloned\igme206\TextAdventureDataDriven\DataDrivenCave\DataDrivenCave\obj\Debug\DataDrivenCave.exe
+C:\Users\Richard S. Hetley\Documents\College Work\Cloned\igme206\TextAdventureDataDriven\DataDrivenCave\DataDrivenCave\obj\Debug\DataDrivenCave.pdb

@@ -1,0 +1,620 @@
+All text at the start of this file is treated as comments.
+The format expected for an input text file is as follows:
+
+START DATA (Headers must be written as one word.  Here, in the comments, it is split to avoid detection.)
+ROOM NAME
+Text To Be Written in the Game
+ROOM DESCRIPTION
+Text with a triple&&&where there is to be a line break upon display in the game
+ROOM EXITS
+lowercase direction
+Exact Case-Matched Room Name of Destination in that Direction
+any more lowercase directions
+Same Pattern
+ROOM AFFORDANCES
+lowercase item or functionality name
+any more items or functionality
+ROOM NAME
+Et cetera
+ROOM NAME
+Et cetera
+END DATA (Again, everything in capital letters is written as one word.)
+
+If a room is empty, there cannot be blank space between ROOM AFFORDANCES and the next ROOM NAME or END DATA footer
+Instead there must be "none," "null" (the word written out), or "empty."
+
+Otherwise, the code looks for these headers and ignores some lines of text
+Many bits of erroneous text in the middle, such as in ROOM AFFORDANCES, will generate error strings instead
+These catch cases of incorrect formating or ordering of information
+
+Comments belong only before the START DATA header or after the END DATA footer
+
+The player begins in the first room listed.
+
+A map must include all five targets noted with special indices:
+plotadvancium
+pathmaker
+furnace
+generator
+path
+Technically, a game can start without these targets, but will not work as normal:
+compass
+lunch
+lever
+restfulness
+The game cannot start with this target included, as it must come from the generator:
+activator
+
+If the room reached by following the True Path is in a normal direction (e.g., "north"),
+there must be a duplicate route for that room in the "other" direction or it will not be blocked properly.
+
+100       Around 100 characters is a recommended maximum width for ROOM DESCRIPTION lines        100
+
+STARTDATA
+
+ROOMNAME
+Deep Cave
+ROOMDESCRIPTION
+This is the deep cave.  Woo, spooky.&&&Light, such as it is, comes from the east.
+ROOMEXITS
+east
+Barely-Lit Cave
+ROOMAFFORDANCES
+pathmaker
+
+ROOMNAME
+Barely-Lit Cave
+ROOMDESCRIPTION
+Natural stone all around.  The deepest end of these caves is to the west.  The last trickles of light&&&come from two distant sources: east and northeast.
+ROOMEXITS
+west
+Deep Cave
+east
+Cavernous Threshold
+northeast
+Rough Tunnel
+ROOMAFFORDANCES
+compass
+
+ROOMNAME
+Cavernous Threshold
+ROOMDESCRIPTION
+This wide space marks the boundary between natural and carved stone.  Caves are to the west, and weak&&&reddish light originates south.
+ROOMEXITS
+west
+Barely-Lit Cave
+south
+Gallery West
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Gallery West
+ROOMDESCRIPTION
+A broad gallery with a carved stone floor extends east.  It overlooks an open space which you cannot&&&really see in the weak light.  Here is an ornate staircase, down, so you may better appreciate.  You may&&&also exit the gallery north.
+ROOMEXITS
+north
+Cavernous Threshold
+east
+Significant Statue
+down
+Contemplative Staircase
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Contemplative Staircase
+ROOMDESCRIPTION
+These ornate stairs were designed so that visitors of the gallery, overhead, may descend in profound&&&thought to where you now stand.  Here, at the base, the demonstration is vaguely-lit in red to the east.
+ROOMEXITS
+up
+Gallery West
+east
+Monument to the Careless
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Monument to the Careless
+ROOMDESCRIPTION
+You stand in the middle of a three-teired demonstration.  Observers in a gallery overhead, at least&&&those who have a light source, may gaze upon the monument in this carved stone space.  Statues abound,&&&marking with profundity the passage of those who fell into folly before.  The metaphor is made&&&literal by a pit here you may descend.  You may also leave west.
+ROOMEXITS
+west
+Contemplative Staircase
+down
+Pit of Lost Things
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Pit of Lost Things
+ROOMDESCRIPTION
+A truly symbolic spectacle: sculpture upon sculpture, carving upon carving, representing everything the&&&viewer has ever lost by dropping it down a pit.  You may climb up out of this pit or leave northeast,&&&where the reddish light is much stronger.  There are no actual lost things you may retrieve here.
+ROOMEXITS
+up
+Monument to the Careless
+northeast
+Reflecting Room
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Reflecting Room
+ROOMDESCRIPTION
+A space filled with mirrors.  Visitors from the demonstration to the southwest are encouraged to&&&reflect.  You may also leave south, down a corridor lit bright red.
+ROOMEXITS
+southwest
+Pit of Lost Things
+south
+Glowing Shaft
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Glowing Shaft
+ROOMDESCRIPTION
+This narrow vertical shaft is lined with stairs going up and down.  Red light, and heat, and noise,&&&rush from below.  There is another exit north.
+ROOMEXITS
+north
+Reflecting Room
+up
+Access Shaft
+down
+Pit of the Furnace
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Pit of the Furnace
+ROOMDESCRIPTION
+The vertical shaft opens into a wide space at the bottom, bright red and blinding.  You stand on the&&&last stone step.
+ROOMEXITS
+up
+Glowing Shaft
+ROOMAFFORDANCES
+furnace
+
+ROOMNAME
+Access Shaft
+ROOMDESCRIPTION
+Brightly-lit from below in red, this is the top of a vertical shaft lined with stairs.  A room is north.
+ROOMEXITS
+down
+Glowing Shaft
+north
+Staging Area
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Stairs and Gantry
+ROOMDESCRIPTION
+Well-carved stairs lit from above by daylight and from the west by redness.  A gantry extends the&&&vertical length; workers could move materials from the surface to the depths here.  You may head up&&&or go west.
+ROOMEXITS
+west
+Staging Area
+up
+Twilight Zone
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Twilight Zone
+ROOMDESCRIPTION
+The very edge of the cave's entrance, at the limit of light, where all is in perpetual gloom.  The&&&entrance is east.  Other routes are north and west.  Stairs lead down.
+ROOMEXITS
+down
+Stairs and Gantry
+west
+Coat Room
+north
+Narrow Worn Tunnel
+east
+Cave Mouth
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Staging Area
+ROOMDESCRIPTION
+A broad space where workers must have prepared themselves and their loads.  Exits are east and south.
+ROOMEXITS
+east
+Stairs and Gantry
+south
+Access Shaft
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Cave Mouth
+ROOMDESCRIPTION
+You stand at the mouth of a cave in the mountains.  The quality of the air changes.&&&The depths are to the west, but you could climb up to the north or leave to the east.
+ROOMEXITS
+north
+Cave Area
+up
+Cave Area
+east
+Forested Rocks
+west
+Twilight Zone
+ROOMAFFORDANCES
+generator
+
+ROOMNAME
+Significant Statue
+ROOMDESCRIPTION
+At the center of the gallery stands a statue of great virtue, imposing and significant.  It invites&&&you to contemplate the red-glowing depths before you, which is futile as you cannot see anything from&&&here.  Its open arms point both east and west, welcoming those new to the gallery.
+ROOMEXITS
+west
+Gallery West
+east
+Gallery East
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Gallery East
+ROOMDESCRIPTION
+A broad gallery with a carved stone floor extends west.  It overlooks an open space which you cannot&&&really see in a weak reddish light.  You may exit the gallery north, whence you feel a light breeze.
+ROOMEXITS
+west
+Significant Statue
+north
+Coat Room
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Coat Room
+ROOMDESCRIPTION
+Presumably useful for visitors to the gallery, south.  Also doubles as a gift shop.  There are no&&&gifts.  The last of the daylight and fresh air is to the east.
+ROOMEXITS
+east
+Twilight Zone
+south
+Gallery East
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Rough Tunnel
+ROOMDESCRIPTION
+A route northeast-southwest.  Difficult to traverse, given how far you are from sunlight.
+ROOMEXITS
+southwest
+Barely-Lit Cave
+northeast
+Workhalls
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Workhalls
+ROOMDESCRIPTION
+Space for workers and their tools.  Stone tables abound on rough stone floor.  Much has been done&&&here and in rooms to the east, but in the weak light all evidence of crafts, or tools, is long-gone.&&&Strange sounds come from southeast.  A final exit is southwest.
+ROOMEXITS
+southwest
+Rough Tunnel
+east
+Worked Halls
+southeast
+Bubbling Corner
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Bubbling Corner
+ROOMDESCRIPTION
+Off the connected rooms where workers worked their work is this diversion into the stone.  Routes to&&&the workspace come from northeast and northwest, and where they meet is a pit in the rock.
+ROOMEXITS
+northwest
+Workhalls
+northeast
+Working Halls
+ROOMAFFORDANCES
+plotadvancium
+
+ROOMNAME
+Working Halls
+ROOMDESCRIPTION
+A work-in-progress, good enough to call "a series of halls."  Workers must have toiled night and&&&day in these caves.  Rooms continue west.  Daylight is weak here, but increases both north and south.&&&Strange sounds come from southwest.
+ROOMEXITS
+west
+Worked Halls
+southwest
+Bubbling Corner
+south
+Narrow Worn Tunnel
+north
+Sloping Tunnel
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Narrow Worn Tunnel
+ROOMDESCRIPTION
+A north-south path.  Years of erosion from workers and their movement of materials are the only&&&efforts at smoothing this rock.  A breeze comes from the south.
+ROOMEXITS
+north
+Working Halls
+south
+Twilight Zone
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Worked Halls
+ROOMDESCRIPTION
+Heavily worked.  If the stone here were any indication, the workers were most of the way to an&&&architectural masterpiece, perhaps in mimicry of the stonework seen elsewhere underground.  Rooms&&&continue east and west.
+ROOMEXITS
+west
+Workhalls
+east
+Working Halls
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Sloping Tunnel
+ROOMDESCRIPTION
+Starting from the south, this space curves underfoot until it becomes nearly vertical to the north.&&&You could still climb up.  A breeze and clear daylight come from above.
+ROOMEXITS
+south
+Working Halls
+north
+Plateau Overlook
+up
+Plateau Overlook
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Plateau Overlook
+ROOMDESCRIPTION
+You stand on a flat expanse of stone jutting out from the mountainside.  The dark cave descends below,&&&while the sky is clear above.  From beyond the plateau's edge, you can see an open space to the east,&&&including a glimpse of the white walls of a house.  Directly to the east are some easily-accessible&&&branches of a tall tree.
+ROOMEXITS
+down
+Sloping Tunnel
+east
+Treetops
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Cave Area
+ROOMDESCRIPTION
+Climbing here is pleasant, but the true heights of these mountains are beyond you without help.  You&&&can head down to the south or walk along more flat ground to the north.
+ROOMEXITS
+south
+Cave Mouth
+down
+Cave Mouth
+north
+Copse of Trees
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Copse of Trees
+ROOMDESCRIPTION
+You stand at one corner of a broad flat area in the mountains, extending generally north and east.&&&Here there are thinning trees and a path going north.  With a little effort, you can clamber through&&&the rocky terrain to the south.
+ROOMEXITS
+north
+Forested Path
+northeast
+West of House
+east
+Peculiar Vegetable Garden
+south
+Cave Area
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Peculiar Vegetable Garden
+ROOMDESCRIPTION
+At the south end of this space is a walled garden with a few too many tomatoes for human courtesy.&&&Directly northeast is the corner of a white house; the front face is north and the side of the building&&&extends east.  You cannot go further south, but most other directions are available.
+ROOMEXITS
+north
+West of House
+east
+South of House
+west
+Copse of Trees
+northwest
+Forested Path
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+South of House
+ROOMDESCRIPTION
+It may have been hectic once, but this space beyond the vegetable patch along the south face of the&&&house is very quiet.  You can visit the garden to the west or go around to the front of the house to&&&the northwest.  The forest becomes too thick in other directions.
+ROOMEXITS
+west
+Peculiar Vegetable Garden
+northwest
+West of House
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Forested Path
+ROOMDESCRIPTION
+Many trees surround a path coming from the south and turning east.  The sheer cliff face is to the&&&west, but most other directions of travel are open.  One tree here, in particular, has strong and&&&low branches.
+ROOMEXITS
+north
+Clearing Corner
+northeast
+Sandbox
+east
+West of House
+southeast
+Peculiar Vegetable Garden
+south
+Copse of Trees
+up
+Treetops
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+West of House
+ROOMDESCRIPTION
+You stand to the west of a white house at the end of a westward path in a broad clearing.  There are&&&things to see in all eight directions of the compass.  The open front door of the house is to the east.
+ROOMEXITS
+north
+Sandbox
+northeast
+North of House
+east
+House
+southeast
+South of House
+south
+Peculiar Vegetable Garden
+southwest
+Copse of Trees
+west
+Forested Path
+northwest
+Clearing Corner
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+House
+ROOMDESCRIPTION
+Through the front door (now to your west), you step into a comfortable space.  Carpet, tables, chair.&&&Recently cleaned, too.
+ROOMEXITS
+west
+West of House
+ROOMAFFORDANCES
+lunch
+
+ROOMNAME
+Clearing Corner
+ROOMDESCRIPTION
+You have reached the far northwest corner of a flat, mostly-clear space.  Impassable mountains rise to&&&your west.  Impenetrable forest is to the north.  More navigable trees are south, and other directions&&&are open.
+ROOMEXITS
+east
+Sandbox
+southeast
+West of House
+south
+Forested Path
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Sandbox
+ROOMDESCRIPTION
+Along the north edge of the clearing, against dense wood impeding your progress, you find the sandbox.&&&You can only imagine what play could be had here.  Directly southeast is the corner of a white house;&&&the front face is south and the side of the building extends east.
+ROOMEXITS
+east
+North of House
+south
+West of House
+southwest
+Forested Path
+west
+Clearing Corner
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+North of House
+ROOMDESCRIPTION
+The trees are taking over here.  There is nowhere to go except west, or, perhaps, to the front face of&&&the house in the southwest.
+ROOMEXITS
+southwest
+West of House
+west
+Sandbox
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Treetops
+ROOMDESCRIPTION
+You balance above head-height on the sturdy branches of a tree.  From here you can reach a flat rocky&&&plateau in the mountains to your west, or, simply, descend.
+ROOMEXITS
+down
+Forested Path
+west
+Plateau Overlook
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Forested Rocks
+ROOMDESCRIPTION
+Trees break through the stone of the mountain range, transforming this area into forest.  The mouth&&&of a cave whistles to your west, while forest continues east and southeast.
+ROOMEXITS
+west
+Cave Mouth
+southeast
+Rocky Forest
+east
+Deep Forest
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Rocky Forest
+ROOMDESCRIPTION
+Rocks and trees are scattered about with equal abandon.  Forest continues north and northwest, while&&&the last of the mountainous terrain escapes the woods to the east.
+ROOMEXITS
+northwest
+Forested Rocks
+north
+Deep Forest
+east
+Near Beach
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Deep Forest
+ROOMDESCRIPTION
+Here the woods are dark, deep, and lovely.  You may explore them further to the west and south.
+ROOMEXITS
+west
+Forested Rocks
+south
+Rocky Forest
+ROOMAFFORDANCES
+empty
+
+ROOMNAME
+Near Beach
+ROOMDESCRIPTION
+Here marks the edge of a calm beach.  West leads to the mountains, and south is the sandy expanse.
+ROOMEXITS
+south
+Far Beach
+west
+Rocky Forest
+other
+Far Beach
+ROOMAFFORDANCES
+lever
+path
+
+ROOMNAME
+Far Beach
+ROOMDESCRIPTION
+The sand and the waves stretch before you, beautiful.  The air is warm and filled with the distant&&&calls of seagulls.  You may go back to the north if the urge to wander strikes you.
+ROOMEXITS
+north
+Near Beach
+ROOMAFFORDANCES
+restfulness
+
+ENDDATA
+
+100       Around 100 characters is a recommended maximum width for ROOM DESCRIPTION lines        100
+
+Here at the end it is possible to add more comments.

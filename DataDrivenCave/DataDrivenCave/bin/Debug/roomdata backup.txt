@@ -1,0 +1,78 @@
+This is a comment
+Directions
+
+STARTDATA
+
+ROOMNAME
+Deep Cave
+ROOMDESCRIPTION
+This is the deep cave.  Woo, spooky.&&&You see light to the east.
+ROOMEXITS
+east
+Cave Mouth
+ROOMAFFORDANCES
+pathmaker
+
+ROOMNAME
+Cave Mouth
+ROOMDESCRIPTION
+You stand at the mouth of a cave in the mountains.  The quality of the air changes.&&&The depths are to the west, but you could climb north or leave to the east.
+ROOMEXITS
+north
+Cave Area
+east
+Near Beach
+west
+Deep Cave
+ROOMAFFORDANCES
+compass
+
+ROOMNAME
+Cave Area
+ROOMDESCRIPTION
+Climbing here is pleasant, but you find there is nowhere else to go in these mountains but back south.
+ROOMEXITS
+south
+Cave Mouth
+ROOMAFFORDANCES
+generator
+
+ROOMNAME
+Near Beach
+ROOMDESCRIPTION
+Here marks the edge of a calm beach.  West leads to the mountains, and south is the sandy expanse.
+ROOMEXITS
+south
+Far Beach
+west
+Cave Mouth
+other
+Far Beach
+ROOMAFFORDANCES
+lever
+path
+
+ROOMNAME
+Far Beach
+ROOMDESCRIPTION
+The sand and the waves stretch before you, beautiful.  The air is warm and filled with the distant&&&calls of seagulls.  You may go back to the north if the urge to wander strikes you.
+ROOMEXITS
+north
+Near Beach
+ROOMAFFORDANCES
+restfulness
+
+ROOMNAME
+Placeholder
+ROOMDESCRIPTION
+Can't get here.
+ROOMEXITS
+up
+Deep Cave
+ROOMAFFORDANCES
+plotadvancium
+furnace
+
+ENDDATA
+
+Here at the end is another comment
