@@ -4,7 +4,7 @@ I created this public repository while pursuing an M.S. in Game Design & Develop
 
 ### Predictable Cave Adventure (/DataDrivenCave)
 
-I coded three versions of this text adventure, which is one more than the assignment required: a first pass which told a single complete story, a second "enhanced" version with puzzle mechanics, and a final "data-driven" version demonstrating the points made in class about the benefits of a data-driven approach.  This final version has 42 rooms, an expanded puzzle, an in-game help system, and an implied story hiding behind the game world.
+I coded three versions of this text adventure, which is one more than the assignment required: a first pass which told a single complete story, a second "enhanced" version with puzzle mechanics, and a final "data-driven" version refactoring the original to incorporate a data-driven approach.  This final version has 42 rooms (the data-driven element), an expanded puzzle, an in-game help system, and an implied story hiding behind the game world.
 
 ### Tiny Ghost (coming when finished)
 
